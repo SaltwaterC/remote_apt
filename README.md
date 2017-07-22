@@ -72,4 +72,4 @@ Add as dependency in the metadata of the cookbook which uses remote apt packages
 
 ## License
 
-[MIT](https://github.com/SaltwaterC/remote_apt/blob/master/LICENSE)
+[MIT](https://github.com/SaltwaterC/remote_apt/blob/master/LICENSE.md)
