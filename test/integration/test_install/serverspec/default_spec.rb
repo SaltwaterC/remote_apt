@@ -5,7 +5,7 @@ describe 'remote_apt::test_install' do
     it { is_expected.to be_installed }
   end
 
-  describe file('/tmp/kitchen/cache/vagrant_1.9.7_x86_64.deb') do
+  describe file("#{kitchen_path}/cache/vagrant_1.9.7_x86_64.deb") do
     it { is_expected.to be_file }
 
     its(:sha256sum) do

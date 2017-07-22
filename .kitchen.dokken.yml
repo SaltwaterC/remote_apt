@@ -1,0 +1,28 @@
+driver:
+  name: dokken
+  privileged: true
+  chef_version: 13.2.20
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+
+verifier:
+  root_path: /opt/verifier
+  sudo: false
+
+platforms:
+  - name: debian-8
+    driver:
+      image: dokken/debian-8
+      pid_one_command: /bin/systemd
+
+suites:
+  - name: test_install
+    run_list:
+      - recipe[remote_apt::test_install]
+  - name: test_remove
+    run_list:
+      - recipe[remote_apt::test_remove]
