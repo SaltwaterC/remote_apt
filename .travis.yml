@@ -16,7 +16,8 @@ services: docker
 
 env:
   matrix:
-  - INSTANCE=default-debian-8
+  - INSTANCE=install-debian-8
+  - INSTANCE=remove-debian-8
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
