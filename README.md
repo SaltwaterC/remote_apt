@@ -21,10 +21,7 @@ May work with or without modification on other Debian derivatives.
 
 ## Recipes
 
- - test_install
- -  test_remove
-
-These recipes are only used for testing this cookbook. Do no use them in your cookbooks. The remote_apt resource is available without any include_recipe statements.
+ - Nome
 
 ## Attributes
 

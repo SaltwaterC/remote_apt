@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe 'remote_apt::test_install' do
+describe 'test::install' do
   describe package('vagrant') do
     it { is_expected.to be_installed }
   end

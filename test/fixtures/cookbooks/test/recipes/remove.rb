@@ -1,8 +1,8 @@
-# the purpose of this recipe is to test the remote_apt resource
+# test remove action of remote_apt
 
 url = 'https://releases.hashicorp.com/vagrant/1.9.7/vagrant_1.9.7_x86_64.deb'
 
-include_recipe 'remote_apt::test_install'
+include_recipe 'test::install'
 
 remote_apt 'test_remove' do
   name url

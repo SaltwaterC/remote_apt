@@ -20,9 +20,9 @@ platforms:
       pid_one_command: /bin/systemd
 
 suites:
-  - name: test_install
+  - name: install
     run_list:
-      - recipe[remote_apt::test_install]
-  - name: test_remove
+      - recipe[test::install]
+  - name: remove
     run_list:
-      - recipe[remote_apt::test_remove]
+      - recipe[test::remove]

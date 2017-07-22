@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe 'remote_apt::test_remove' do
+describe 'test::remove' do
   describe package('vagrant') do
     it { is_expected.not_to be_installed }
   end
