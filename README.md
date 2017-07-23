@@ -1,4 +1,4 @@
-# remote_apt Cookbook
+# remote_apt Cookbook [![build status](https://secure.travis-ci.org/SaltwaterC/remote_apt.png?branch=master)](https://travis-ci.org/SaltwaterC/remote_apt)
 
 Very basic cookbook to install remote apt packages supplied by vendors - i.e they are not part of the distribution's repositories.
 
