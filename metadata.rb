@@ -7,3 +7,4 @@ issues_url 'https://github.com/SaltwaterC/remote_apt/issues'
 chef_version '>= 12.5'
 supports %w[debian ubuntu]
 license 'MIT'
+description 'Installs remotely hosted apt packages'
