@@ -1,7 +1,6 @@
-desc 'Runs rubocop && foodcritic'
+desc 'Runs cookstyle'
 task :lint do
-  sh 'rubocop'
-  sh 'foodcritic --epic-fail any .'
+  sh 'cookstyle'
 end
 
 desc 'kitchen converge'
@@ -20,7 +19,7 @@ task :clean do
 end
 
 desc 'Runs all the tasks'
-task test: %i[converge verify lint]
+task test: %i[lint converge verify]
 
 desc 'Alias of test task'
 task default: %i[test]

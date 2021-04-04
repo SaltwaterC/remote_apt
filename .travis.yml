@@ -1,26 +1,22 @@
 sudo: required
-dist: trusty
-
-addons:
-  apt:
-    sources:
-      - chef-current-trusty
-    packages:
-      - chefdk
+dist: bionic
 
 branches:
   only:
-    - master
+  - master
+  - dev
 
 services: docker
 
 env:
   matrix:
-  - INSTANCE=install-debian-8
-  - INSTANCE=remove-debian-8
+  - INSTANCE=install-debian-10
+  - INSTANCE=remove-debian-10
 
 before_script:
-  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
-  - eval "$(chef shell-init bash)"
+- curl -LO https://cinc.osuosl.org/files/unstable/cinc-workstation/21.3.346/ubuntu/20.04/cinc-workstation_21.3.346-1_amd64.deb && sudo apt install ./cinc-workstation_21.3.346-1_amd64.deb
+- sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+- eval "$(chef shell-init bash)"
+- gem install kitchen-docker
 
-script: KITCHEN_LOCAL_YAML=.kitchen.dokken.yml kitchen verify ${INSTANCE}
+script: KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify ${INSTANCE}

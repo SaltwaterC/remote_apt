@@ -6,6 +6,6 @@ DEPENDENCIES
     path: test/fixtures/cookbooks/test
 
 GRAPH
-  remote_apt (1.0.0)
-  test (1.0.0)
+  remote_apt (1.0.1)
+  test (1.0.1)
     remote_apt (>= 0.0.0)

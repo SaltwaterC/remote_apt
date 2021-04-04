@@ -1,8 +1,9 @@
 require 'digest'
 
 resource_name :remote_apt
+provides :remote_apt
 
-property :url, String, required: true, name_property: true
+property :url, String, name_property: true
 property :sha256, String
 
 default_action :install

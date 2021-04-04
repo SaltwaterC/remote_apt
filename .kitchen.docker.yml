@@ -1,7 +1,13 @@
+# n.b kitchen-dokken works exclusively with Chef i.e there's no Cinc support
+# Chef Infra Client cannot execute without accepting the license - erm, no
+
 driver:
-  name: vagrant
-  customize:
-    nictype1: virtio
+  name: docker
+  privileged: true
+  use_sudo: false
+
+transport:
+  name: docker
 
 provisioner:
   name: chef_zero
@@ -9,11 +15,7 @@ provisioner:
   product_version: 16.11.7
 
 platforms:
-- name: debian-10.8
-  driver:
-    box: bento/debian-10.8
-    box_auto_update: true
-    box_auto_prune: true
+- name: debian-10
 
 suites:
 - name: install
