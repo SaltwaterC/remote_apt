@@ -16,7 +16,6 @@ env:
 before_script:
 - curl -LO https://cinc.osuosl.org/files/unstable/cinc-workstation/21.3.346/ubuntu/20.04/cinc-workstation_21.3.346-1_amd64.deb && sudo apt install ./cinc-workstation_21.3.346-1_amd64.deb
 - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
-- eval "$(chef shell-init bash)"
-- gem install kitchen-docker
+- eval "$(cinc shell-init bash)" && gem install kitchen-docker
 
 script: KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify ${INSTANCE}
